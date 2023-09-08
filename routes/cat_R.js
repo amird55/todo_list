@@ -3,11 +3,7 @@ const router = express.Router()
 module.exports = router;
 
 
-router.get("/",(req, res) => {
 
-    res.render("mainPage", {pageTitle:"בוקר טוב"});
-
-});
 router.post("/Add",(req, res) => {
     let name=req.body.name;
 
@@ -81,8 +77,6 @@ router.get("/List",(req, res) => {
         else
         {
             res.status(200).json(rows );
-            // res.status(200).json({message: "Added"});
-            // res.status(200).json(req.crs_data_filtered);
         }
 
     });

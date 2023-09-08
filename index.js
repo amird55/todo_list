@@ -16,6 +16,8 @@ app.use(express.static(path.join(__dirname, "js")));
 var db_M = require('./database');
 global.db_pool = db_M.pool;
 
+const fe_rtr = require('./routes/FE_R');
+app.use('/', fe_rtr);
 const cat_rtr = require('./routes/cat_R');
 app.use('/Cat', cat_rtr);
 const tasks_rtr = require('./routes/tasks_R');
