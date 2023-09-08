@@ -1,3 +1,4 @@
+// npm i express mysql2 ejs body-parser
 const express = require('express');
 const port = 7575;
 const app = express();
