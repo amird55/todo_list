@@ -17,7 +17,9 @@ var db_M = require('./database');
 global.db_pool = db_M.pool;
 
 const cat_rtr = require('./routes/cat_R');
-app.use('/', cat_rtr);
+app.use('/Cat', cat_rtr);
+const tasks_rtr = require('./routes/tasks_R');
+app.use('/Task', tasks_rtr);
 
 app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
     console.log(`Now listening on port http://localhost:${port}`);
