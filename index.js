@@ -20,6 +20,8 @@ const fe_rtr = require('./routes/FE_R');
 app.use('/', fe_rtr);
 const cat_rtr = require('./routes/cat_R');
 app.use('/Cat', cat_rtr);
+const theme_rtr = require('./routes/themes_R');
+app.use('/Tm', theme_rtr);
 const tasks_rtr = require('./routes/tasks_R');
 app.use('/Task', tasks_rtr);
 
