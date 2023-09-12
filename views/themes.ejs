@@ -7,7 +7,24 @@
         <br>
         <input type="color" name="" id="text_color" \>
         <br>
-        <button>save</button>
+        <button onclick="AddLine();">save</button>
     </div>
 </main>
+<script>
+    async function AddLine(){
+        let name=document.getElementById("name").value;
+        let bg_color=document.getElementById("bg_color").value;
+        let text_color=document.getElementById("text_color").value;
+        let response = await fetch('/Tm/Add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({name: name, bg_color: bg_color, text_color: text_color})
+            }
+        );
+        let jsn=await response.json();
+        console.log(jsn);
+    }
+</script>
 <%- include("page_bottom.ejs") %>
