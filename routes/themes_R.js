@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router()
 module.exports = router;
 
+router.get("/",function (req,res){
+    res.render("themes",{});
+});
 router.post("/Add",function(req,res){
     let name        =req.body.name;
     let bg_color    =req.body.bg_color;
